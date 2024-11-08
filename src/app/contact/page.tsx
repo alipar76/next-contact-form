@@ -1,18 +1,18 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Contact us",
-  description: "Contact us form",
+  title: 'Contact us',
+  description: 'Contact us form',
 };
 
 export default function Home() {
   return (
     <div className="w-screen h-screen flex justify-center items-center">
-      <div className="bg-white w-4/12 p-7 rounded-10">
+      <div className="bg-white sm:w-11/12 md:w-8/12 lg:w-5/12 p-7 rounded-10">
         <h1 className="text-2xl font-bold">Contact Us</h1>
         <div className="flex flex-col gap-y-5 mt-8">
           <div className="w-full flex gap-x-6">
-            <div className="w-6/12">
+            <div className="md:w-6/12 sm:w-full relative">
               <label className="text-sm" htmlFor="">
                 First Name
               </label>
@@ -21,8 +21,11 @@ export default function Home() {
                 className="border-[1px] border-gray-800 outline-none py-2 px-4 w-full rounded-[5px] mt-1 cursor-pointer duration-200 hover:border-primary focus:border-primary"
                 type="text"
               />
+              {/* <div className="absolute top-full text-red-600 text-xs">
+                This field is required
+              </div> */}
             </div>
-            <div className="w-6/12">
+            <div className="md:w-6/12 sm:w-full">
               <label className="text-sm" htmlFor="">
                 Last Name
               </label>
@@ -45,23 +48,17 @@ export default function Home() {
           </div>
           <div className="w-full">
             <div>
-              <label className="text-sm" htmlFor="">
-                Query Type
-              </label>
+              <span className="text-sm cursor-default">Query Type</span>
               <span className="ml-2 text-green-700">*</span>
             </div>
-            <div className="flex gap-x-6">
-              <div className="w-6/12">
-                <input
-                  className="border-[1px] border-gray-800 outline-none py-2 px-4 w-full rounded-[5px] mt-1 cursor-pointer duration-200 hover:border-primary focus:border-primary"
-                  type="text"
-                />
+            <div className="flex gap-x-6 mt-1">
+              <div className="flex items-center w-6/12 border-[1px] border-gray-800 py-2 px-6 rounded-[5px] cursor-pointer duration-200 hover:border-primary">
+                <div className="p-2 rounded-full border-[1px] border-gray-800"></div>
+                <div className="ml-3">General Enquiry</div>
               </div>
-              <div className="w-6/12">
-                <input
-                  className="border-[1px] border-gray-800 outline-none py-2 px-4 w-full rounded-[5px] mt-1 cursor-pointer duration-200 hover:border-primary focus:border-primary"
-                  type="text"
-                />
+              <div className="flex items-center w-6/12 border-[1px] border-gray-800 py-2 px-6 rounded-[5px] cursor-pointer duration-200 hover:border-primary">
+                <div className="p-2 rounded-full border-[1px] border-gray-800"></div>
+                <div className="ml-3">Support Request</div>
               </div>
             </div>
           </div>
